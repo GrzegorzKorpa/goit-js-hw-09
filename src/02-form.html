@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Form</title>
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+  </head>
+
+  <body>
+
+    <a href="./index.html" class="nav-link nav-list go-back">Go back</a>
+
+
+
+    <form class="feedback-form" autocomplete="off">
+
+      <label>
+
+        Email
+
+        <input type="email" name="email" class="email" autofocus />
+
+      </label>
+
+      <label>
+
+        Message
+
+        <textarea name="message" rows="8" class="message"></textarea>
+
+      </label>
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+
+
+    <script type="module" src="./partials/02-form.js"></script>
+
+  </body>
+
+</html>
+
+
+
+<!-- ---------------------------------------PONIŻEJ WKLEJAM ZAWARTOŚĆ JS ŻEBY DZIAŁAŁO -------------------------->
+
+<!-- <script>
+
+  const form = document.querySelector(`form.feedback-form`);
+
+  form.addEventListener('submit', submitDone);
+
+
+
+  const email = document.querySelector(`form.feedback-form > label > input`);
+
+  const message = document.querySelector(
+
+    `form.feedback-form > label > textarea`
+
+  );
+
+  const localStorageKey = 'feedback-form-state';
+
+
+
+  form.addEventListener('input', event => {
+
+    const { name, value } = event.target;
+
+    const currentData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
+
+    currentData[name] = value.trim();
+
+    localStorage.setItem(localStorageKey, JSON.stringify(currentData));
+
+  });
+
+
+
+  function submitDone(event) {
+
+    event.preventDefault();
+
+    if (
+
+      event.target.elements.email.value.trim() === '' ||
+
+      event.target.elements.message.value === ''
+
+    ) {
+
+      alert('All form fields must be filled in');
+
+    } else if (
+
+      event.target.elements.email.value.trim() !== '' ||
+
+      event.target.elements.message.value !== ''
+
+    ) {
+
+      console.log('Submit done!');
+
+      console.log({
+
+        email: event.target.elements.email.value.trim(),
+
+        message: event.target.elements.message.value.trim(),
+
+      });
+
+    }
+
+    form.reset();
+
+    localStorage.removeItem(localStorageKey);
+
+  }
+
+
+
+  const saveFormData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
+
+
+
+  email.value = saveFormData.email ?? ``;
+
+  message.value = saveFormData.message ?? ``;
+
+</script> -->
+
+<!-- ----------------------------------------------------------------------------------------------------------->
